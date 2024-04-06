@@ -23,7 +23,7 @@ const Post = () => {
                 </div>
                 <p className='font-normal text-[15px] px-3 mb-2'>🔥 Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa perferendis nobis ducimus aspernatur officiis accusamus ratione tempore, hic iusto debitis ex porro consequatur suscipit cupiditate assumenda iure unde fuga veritatis.</p>
                 <Link href="#">
-                    <Image src={post} alt='post' className='h-[700px] w-full object-cover' />
+                    <Image src={post} alt='post' className='h-[750px] w-full object-cover' />
                 </Link>
                 <div className='flex flex-col p-2'>
                     <div className="flex justify-between">
