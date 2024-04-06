@@ -3,7 +3,7 @@ import PostSection from '../components/PostSection';
 import Header from '../components/Header';
 import ContactSection from '../components/ContactSection';
 
-const HomeLayout = () => {
+const HomeLayout: React.FC = (): JSX.Element => {
   return (
     <section className='bg-gray-300'>
       <Header />

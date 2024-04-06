@@ -3,13 +3,18 @@ import { Dialog, Transition } from '@headlessui/react';
 import { AiOutlineClose } from "react-icons/ai";
 import InputComponent from './InputComponent';
 import { IoIosImages } from 'react-icons/io';
-export default function Modal(props: { shouldOpen: boolean, setIsModalOpen: any }) {
 
-    const cancelButtonRef = useRef(null)
+interface ModalTypes {
+    shouldOpen: boolean,
+    setIsModalOpen: any
+}
+const Modal: React.FC<ModalTypes> = ({ shouldOpen, setIsModalOpen }): JSX.Element => {
+
+    const cancelButtonRef = useRef<HTMLButtonElement>(null)
 
     return (
-        <Transition.Root show={props.shouldOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={props.setIsModalOpen}>
+        <Transition.Root show={shouldOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setIsModalOpen}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -39,7 +44,7 @@ export default function Modal(props: { shouldOpen: boolean, setIsModalOpen: any 
                                         <Dialog.Title className="text-center text-[#116450] font-semibold text-[18px]">
                                             Create Post
                                         </Dialog.Title>
-                                        <button ref={cancelButtonRef} onClick={() => props.setIsModalOpen(false)} className='hover:bg-gray-300 transition-all duration-150 ease-in py-2 px-[9px] rounded-full cursor-pointer'><AiOutlineClose size={25} color='black' /></button>
+                                        <button ref={cancelButtonRef} onClick={() => setIsModalOpen(false)} className='hover:bg-gray-300 transition-all duration-150 ease-in py-2 px-[9px] rounded-full cursor-pointer'><AiOutlineClose size={25} color='black' /></button>
                                     </div>
                                     <hr className='my-1' />
                                     <InputComponent type='text' placeholder="What's on your mind, Hafiz Muhammad?" customClass='bg-transparent' />
@@ -61,3 +66,5 @@ export default function Modal(props: { shouldOpen: boolean, setIsModalOpen: any 
         </Transition.Root>
     )
 }
+
+export default Modal;
