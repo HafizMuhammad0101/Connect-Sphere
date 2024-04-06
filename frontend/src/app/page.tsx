@@ -1,7 +1,9 @@
 import HomeLayout from "./(Home)/HomeLayout";
 
-export default function Home() {
+const Home: React.FC = (): JSX.Element => {
   return (
     <HomeLayout />
   );
 }
+
+export default Home;
