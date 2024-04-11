@@ -27,7 +27,10 @@ const userSchema = new mongoose.Schema({
     rememberMe: {
         type: Boolean,
         default: false,
-    }
+    },
+    friends: [String],
+    sentRequests: [String],
+    receivedRequests: [String],
 }, { timestamps: true });
 
 export const User = mongoose.model("User", userSchema);
